@@ -41,11 +41,11 @@ local require = GLOBAL.require
 local STRINGS = GLOBAL.STRINGS
 
 -- The character select screen lines
-STRINGS.CHARACTER_TITLES.silverwolf = "The Brainrotted Gamer"
-STRINGS.CHARACTER_NAMES.silverwolf = "Silver Wolf"
-STRINGS.CHARACTER_DESCRIPTIONS.silverwolf = "*Night is her domain\n*She is a picky eater but need to eat less\n*Scared of showers"
-STRINGS.CHARACTER_QUOTES.silverwolf = "\"Time to log off... I mean, ah, head back.\""
-STRINGS.CHARACTER_SURVIVABILITY.silverwolf = "Variable"
+STRINGS.CHARACTER_TITLES.SILVERWOLF = "The Brainrotted Gamer"
+STRINGS.CHARACTER_NAMES.SILVERWOLF = "Silver Wolf"
+STRINGS.CHARACTER_DESCRIPTIONS.SILVERWOLF = "*Night is her domain\n*She is a picky eater but need to eat less\n*Scared of showers"
+STRINGS.CHARACTER_QUOTES.SILVERWOLF = "\"Time to log off... I mean, ah, head back.\""
+STRINGS.CHARACTER_SURVIVABILITY.SILVERWOLF = "Variable"
 
 -- Custom speech strings
 STRINGS.CHARACTERS.SILVERWOLF = require "speech_silverwolf"
