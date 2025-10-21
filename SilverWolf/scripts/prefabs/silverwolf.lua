@@ -5,8 +5,8 @@ local assets = {
 }
 
 -- Your character's stats
-TUNING.SILVERWOLF_HEALTH = 150
-TUNING.SILVERWOLF_HUNGER = 150
+TUNING.SILVERWOLF_HEALTH = 100
+TUNING.SILVERWOLF_HUNGER = 125
 TUNING.SILVERWOLF_SANITY = 50
 
 -- Custom starting inventory
@@ -86,6 +86,19 @@ local master_postinit = function(inst)
 	inst:WatchWorldState("isdusk", sanity_drain)
 	inst:WatchWorldState("isnight", sanity_drain)
 
+	inst.components.sanity.wetness_induced_rate = 4
+
+	-- Diet
+	inst.components.eater:SetDiet({ FOODGROUP.MEAT, FOODGROUP.GOODIES }, { FOODGROUP.MEAT, FOODGROUP.GOODIES })
+	inst.components.eater.strongstomach = true  -- can eat monster meat without penalty
+
+	inst.components.eater:SetOnEatFn(function(inst, food)
+    if not (food:HasTag("meat") or food:HasTag("sweetener") or food.prefab == "taffy" or food.prefab == "jellybean") then
+        inst.components.talker:Say("That's not sigma 67 ohio rizz food!")
+    end
+	end)
+
+	
 	-- Run once on load
 	sanity_drain(inst)
 

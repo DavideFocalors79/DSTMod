@@ -43,9 +43,9 @@ local STRINGS = GLOBAL.STRINGS
 -- The character select screen lines
 STRINGS.CHARACTER_TITLES.silverwolf = "The Brainrotted Gamer"
 STRINGS.CHARACTER_NAMES.silverwolf = "Silver Wolf"
-STRINGS.CHARACTER_DESCRIPTIONS.silverwolf = "*Night is her domain\n*She is a picky eater but need to eat less\n*Scared of showers"
+STRINGS.CHARACTER_DESCRIPTIONS.silverwolf = "*Night is her domain\n*She is a picky eater and have trash taste\n*Scared of showers\n*Less apetite\n*She is prolly insane"
 STRINGS.CHARACTER_QUOTES.silverwolf = "\"Time to log off... I mean, ah, head back.\""
-STRINGS.CHARACTER_SURVIVABILITY.silverwolf = "Variable"
+STRINGS.CHARACTER_SURVIVABILITY.silverwolf = "None"
 
 -- Custom speech strings
 STRINGS.CHARACTERS.SILVERWOLF = require "speech_silverwolf"

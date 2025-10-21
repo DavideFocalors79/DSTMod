@@ -1,6 +1,6 @@
 -- This information tells other players more about the mod
 name = "Silver Wolf - HSR Mod"
-description = "Just a silly mod for a silly character."
+description = "Just a silly mod for a silly character.\n\nHealth = 100\nHunger = 125\nSanity = 50\n\nShe is designed to have very high disavantages, but some good perks too"
 author = "Iryme"
 version = "1.0.0" -- This is the version of the template. Change it to your own number.
 
