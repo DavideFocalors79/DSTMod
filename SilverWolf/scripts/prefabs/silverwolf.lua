@@ -10,13 +10,13 @@ TUNING.SILVERWOLF_HUNGER = 150
 TUNING.SILVERWOLF_SANITY = 50
 
 -- Custom starting inventory
-TUNING.GAMEMODE_STARTING_ITEMS.DEFAULT.silverwolf = {
+TUNING.GAMEMODE_STARTING_ITEMS.DEFAULT.SILVERWOLF = {
 
 }
 
 local start_inv = {}
 for k, v in pairs(TUNING.GAMEMODE_STARTING_ITEMS) do
-    start_inv[string.lower(k)] = v.silverwolf
+    start_inv[string.lower(k)] = v.SILVERWOLF
 end
 local prefabs = FlattenTree(start_inv, true)
 
@@ -70,7 +70,7 @@ local master_postinit = function(inst)
     inst.components.combat.damagemultiplier = 1
 	
 	-- Hunger rate (optional)
-	inst.components.hunger.hungerrate = 0.75 * TUNING.WILSON_HUNGER_RATE
+	inst.components.hunger.hungerrate = 1 * TUNING.WILSON_HUNGER_RATE
 	
 	inst.OnLoad = onload
     inst.OnNewSpawn = onload

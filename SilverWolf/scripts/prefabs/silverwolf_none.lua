@@ -16,7 +16,7 @@ return CreatePrefabSkin("silverwolf_none",
 	type = "base",
 	assets = assets,
 	skins = skins, 
-	skin_tags = {"silverwolf", "CHARACTER", "BASE"},
+	skin_tags = {"SILVERWOLF", "CHARACTER", "BASE"},
 	build_name_override = "silverwolf",
 	rarity = "Character",
 })
