@@ -11,7 +11,7 @@ TUNING.SILVERWOLF_SANITY = 50
 
 -- Custom starting inventory
 TUNING.GAMEMODE_STARTING_ITEMS.DEFAULT.SILVERWOLF = {
- "opulent_axe"
+ "goldenaxe"
 }
 
 local start_inv = {}
