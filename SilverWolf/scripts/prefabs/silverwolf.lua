@@ -5,9 +5,9 @@ local assets = {
 }
 
 -- Your character's stats
-TUNING.silverwolf_HEALTH = 150
-TUNING.silverwolf_HUNGER = 150
-TUNING.silverwolf_SANITY = 50
+TUNING.SILVERWOLF_HEALTH = 150
+TUNING.SILVERWOLF_HUNGER = 150
+TUNING.SILVERWOLF_SANITY = 50
 
 -- Custom starting inventory
 TUNING.GAMEMODE_STARTING_ITEMS.DEFAULT.silverwolf = {
@@ -62,9 +62,9 @@ local master_postinit = function(inst)
     --inst.talker_path_override = "dontstarve_DLC001/characters/"
 	
 	-- Stats	
-	inst.components.health:SetMaxHealth(TUNING.silverwolf_HEALTH)
-	inst.components.hunger:SetMax(TUNING.silverwolf_HUNGER)
-	inst.components.sanity:SetMax(TUNING.silverwolf_SANITY)
+	inst.components.health:SetMaxHealth(TUNING.SILVERWOLF_HEALTH)
+	inst.components.hunger:SetMax(TUNING.SILVERWOLF_HUNGER)
+	inst.components.sanity:SetMax(TUNING.SILVERWOLF_SANITY)
 	
 	-- Damage multiplier (optional)
     inst.components.combat.damagemultiplier = 1
