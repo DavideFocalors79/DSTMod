@@ -1,6 +1,6 @@
 -- This information tells other players more about the mod
 name = "Silver Wolf - HSR Mod"
-description = "A character template for Don't Starve Together."
+description = "Just a silly mod for a silly character."
 author = "Iryme"
 version = "1.0.0" -- This is the version of the template. Change it to your own number.
 

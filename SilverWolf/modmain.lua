@@ -42,17 +42,17 @@ local STRINGS = GLOBAL.STRINGS
 
 -- The character select screen lines
 STRINGS.CHARACTER_TITLES.silverwolf = "The Brainrotted Gamer"
-STRINGS.CHARACTER_NAMES.silverwolf = "silverwolf"
+STRINGS.CHARACTER_NAMES.silverwolf = "Silver Wolf"
 STRINGS.CHARACTER_DESCRIPTIONS.silverwolf = "*Night is her domain\n*She is a picky eater but need to eat less\n*Scared of showers"
 STRINGS.CHARACTER_QUOTES.silverwolf = "\"Time to log off... I mean, ah, head back.\""
 STRINGS.CHARACTER_SURVIVABILITY.silverwolf = "Variable"
 
 -- Custom speech strings
-STRINGS.CHARACTERS.silverwolf = require "speech_silverwolf"
+STRINGS.CHARACTERS.SILVERWOLF = require "speech_silverwolf"
 
 -- The character's name as appears in-game 
-STRINGS.NAMES.silverwolf = "Silver Wolf"
-STRINGS.SKIN_NAMES.silverwolf_none = "Silver Wolf"
+STRINGS.NAMES.SILVERWOLF = "Silver Wolf"
+STRINGS.SKIN_NAMES.SILVERWOLF_none = "Silver Wolf"
 
 -- The skins shown in the cycle view window on the character select screen.
 -- A good place to see what you can put in here is in skinutils.lua, in the function GetSkinModes
