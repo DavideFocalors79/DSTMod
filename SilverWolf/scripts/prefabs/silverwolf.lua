@@ -50,6 +50,16 @@ local common_postinit = function(inst)
 	inst.MiniMapEntity:SetIcon( "silverwolf.tex" )
 end
 
+local function sanity_drain(inst)
+    if TheWorld.state.isday then
+        -- Drain sanity in the daytime
+        inst.components.sanity.dapperness = -TUNING.DAPPERNESS_MED  -- or tweak to your liking
+    else
+        -- Normal sanity regen/drain at night
+        inst.components.sanity.dapperness = 0
+    end
+end
+
 -- This initializes for the server only. Components are added here.
 local master_postinit = function(inst)
 	-- Set starting inventory
@@ -68,6 +78,17 @@ local master_postinit = function(inst)
 	
 	-- Damage multiplier (optional)
     inst.components.combat.damagemultiplier = 1
+
+	-- Sanity multiplier
+	inst.components.sanity.night_drain_mult = 0
+
+	inst:WatchWorldState("isday", sanity_drain)
+	inst:WatchWorldState("isdusk", sanity_drain)
+	inst:WatchWorldState("isnight", sanity_drain)
+
+	-- Run once on load
+	sanity_drain(inst)
+
 	
 	-- Hunger rate (optional)
 	inst.components.hunger.hungerrate = 0.75 * TUNING.WILSON_HUNGER_RATE
