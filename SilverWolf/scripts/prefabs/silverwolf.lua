@@ -11,7 +11,7 @@ TUNING.SILVERWOLF_SANITY = 50
 
 -- Custom starting inventory
 TUNING.GAMEMODE_STARTING_ITEMS.DEFAULT.SILVERWOLF = {
-
+ "opulent_axe"
 }
 
 local start_inv = {}
@@ -68,9 +68,11 @@ local master_postinit = function(inst)
 	
 	-- Damage multiplier (optional)
     inst.components.combat.damagemultiplier = 1
+
+	inst.components.sanity.sanityrate = 2 * TUNING.WILSON_SANITY_RATE
 	
 	-- Hunger rate (optional)
-	inst.components.hunger.hungerrate = 1 * TUNING.WILSON_HUNGER_RATE
+	inst.components.hunger.hungerrate = 0.75 * TUNING.WILSON_HUNGER_RATE
 	
 	inst.OnLoad = onload
     inst.OnNewSpawn = onload
