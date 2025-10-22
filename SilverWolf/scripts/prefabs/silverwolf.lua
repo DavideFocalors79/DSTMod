@@ -60,8 +60,22 @@ local function sanity_drain(inst)
     end
 end
 
+local function UpdateWetnessSanity(inst)
+    local wetness = inst.components.moisture:GetMoisturePercent()
+    if wetness > 0.5 then
+        inst.components.sanity.wetness_induced_rate = 8  -- Triple sanity loss when soaked
+    else
+        inst.components.sanity.wetness_induced_rate = 2  -- Double when damp
+    end
+end
+
 -- This initializes for the server only. Components are added here.
 local master_postinit = function(inst)
+
+	-- Make sure eater component exists (player prefabs normally have it)
+    if not inst.components.eater then
+        inst:AddComponent("eater")
+    end
 	-- Set starting inventory
     inst.starting_inventory = start_inv[TheNet:GetServerGameMode()] or start_inv.default
 	
@@ -80,23 +94,15 @@ local master_postinit = function(inst)
     inst.components.combat.damagemultiplier = 1
 
 	-- Sanity multiplier
-	inst.components.sanity.night_drain_mult = 0
-
 	inst:WatchWorldState("isday", sanity_drain)
 	inst:WatchWorldState("isdusk", sanity_drain)
 	inst:WatchWorldState("isnight", sanity_drain)
 
-	inst.components.sanity.wetness_induced_rate = 4
+ 	inst:DoPeriodicTask(1, UpdateWetnessSanity)
 
 	-- Diet
-	inst.components.eater:SetDiet({ FOODGROUP.MEAT, FOODGROUP.GOODIES }, { FOODGROUP.MEAT, FOODGROUP.GOODIES })
+	inst.components.eater:SetDiet({ FOODGROUP.MEATS }, { FOODGROUP.MEAT })
 	inst.components.eater.strongstomach = true  -- can eat monster meat without penalty
-
-	inst.components.eater:SetOnEatFn(function(inst, food)
-    if not (food:HasTag("meat") or food:HasTag("sweetener") or food.prefab == "taffy" or food.prefab == "jellybean") then
-        inst.components.talker:Say("That's not sigma 67 ohio rizz food!")
-    end
-	end)
 
 	
 	-- Run once on load
